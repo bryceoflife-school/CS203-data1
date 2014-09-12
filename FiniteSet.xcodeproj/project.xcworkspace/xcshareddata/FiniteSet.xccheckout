@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1EAF00C2-6288-42F7-937D-03093E05C3A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FiniteSet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4AB15F9AF05EC1D2F63D083B7887CF2BB91EECC6</key>
+		<string>https://github.com/bryceoflife/CS203-data1.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FiniteSet.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4AB15F9AF05EC1D2F63D083B7887CF2BB91EECC6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bryceoflife/CS203-data1.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4AB15F9AF05EC1D2F63D083B7887CF2BB91EECC6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4AB15F9AF05EC1D2F63D083B7887CF2BB91EECC6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CS203-data1</string>
+		</dict>
+	</array>
+</dict>
+</plist>
