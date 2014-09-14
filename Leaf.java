@@ -33,13 +33,13 @@ public class Leaf implements BinaryTree{
     }
     
     public BinaryTree remove(int elt){
-        return new Leaf();
+        return null;
     }
     
     public BinaryTree union(BinaryTree u){
-        return u;
+        return null;
     }
-    /*
+    
     public BinaryTree inter(BinaryTree u){
         return null;
     }
@@ -54,7 +54,5 @@ public class Leaf implements BinaryTree{
     
     public boolean subset(BinaryTree u){
         return false;
-     
     }
-     */
 }
