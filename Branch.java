@@ -1,21 +1,30 @@
 import java.util.*;
-//package CS203data1;
 
 
-public class Branch implements FiniteSet{
+public class Branch implements BinaryTree{
     
     int root;
-    FiniteSet left;
-    FiniteSet right;
+    BinaryTree left;
+    BinaryTree right;
     
-    Branch(int root, FiniteSet left, FiniteSet right){
+    public Branch(int root){
+        this.root = root;
+        this.left = new Leaf();
+        this.right = new Leaf();
+    }
+    
+    Branch(int root, BinaryTree left, BinaryTree right){
         this.root = root;
         this.left = left;
         this.right = right;
     }
     
+    public BinaryTree empty(){
+        return new Leaf();
+    }
+    
     public int cardinality(){
-        return 1 + left.cardinality() + right.cardinality();
+        return 1 + this.left.cardinality() + this.right.cardinality();
     }
     
     public boolean isEmptyHuh() {
@@ -23,40 +32,48 @@ public class Branch implements FiniteSet{
     }
     
     public boolean member(int elt){
-        if (root == elt) {
+        if (this.root == elt) {
             return true;
-        } else if (root > elt) {
+        } else if (this.root > elt) {
             return left.member(elt);
         } else {
             return right.member(elt);
         }
     }
     
-    public FiniteSet add(int elt){
+
+    public BinaryTree add(int elt){
+        Branch newBST = new Branch(this.root, this.left, this.right);
+        if (elt < newBST.root) {
+            newBST.left = newBST.left.add(elt);
+        } else if (elt > newBST.root) {
+            newBST.right = newBST.right.add(elt);
+        }
+        return newBST;
+    }
+    
+    
+    public BinaryTree remove(int elt){
         return null;
     }
     
-    public FiniteSet remove(int elt){
+    public BinaryTree union(BinaryTree u){
         return null;
     }
     
-    public FiniteSet union(FiniteSet u){
+    public BinaryTree inter(BinaryTree u){
         return null;
     }
     
-    public FiniteSet inter(FiniteSet u){
+    public BinaryTree diff(BinaryTree u){
         return null;
     }
     
-    public FiniteSet diff(FiniteSet u){
-        return null;
-    }
-    
-    public boolean equal(FiniteSet u){
+    public boolean equal(BinaryTree u){
         return false;
     }
     
-    public boolean subset(FiniteSet u){
+    public boolean subset(BinaryTree u){
         return false;
     }
 }

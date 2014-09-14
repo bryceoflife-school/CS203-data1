@@ -8,8 +8,13 @@
             * Left
             * Right
  */
-public class Fruit implements FiniteSet{
-    Fruit(){ }
+public class Leaf implements BinaryTree{
+    
+    Leaf(){ }
+    
+    public BinaryTree empty(){
+        return this;
+    };
     
     public int cardinality(){
         return 0;
@@ -23,31 +28,31 @@ public class Fruit implements FiniteSet{
         return false;
     }
     
-    public FiniteSet add(int elt){
-        return new Branch(elt, this, this);
+    public BinaryTree add(int elt){
+        return new Branch(elt);
     }
     
-    public FiniteSet remove(int elt){
+    public BinaryTree remove(int elt){
         return null;
     }
     
-    public FiniteSet union(FiniteSet u){
+    public BinaryTree union(BinaryTree u){
         return null;
     }
     
-    public FiniteSet inter(FiniteSet u){
+    public BinaryTree inter(BinaryTree u){
         return null;
     }
     
-    public FiniteSet diff(FiniteSet u){
+    public BinaryTree diff(BinaryTree u){
         return null;
     }
     
-    public boolean equal(FiniteSet u){
+    public boolean equal(BinaryTree u){
         return false;
     }
     
-    public boolean subset(FiniteSet u){
+    public boolean subset(BinaryTree u){
         return false;
     }
 }
