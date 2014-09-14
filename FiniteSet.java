@@ -16,13 +16,15 @@ public class FiniteSet{
             for(int j = 0; j < 30; j++){
                 firstHalf.add(randInt(0,100));
                 
+                
             }
             
             for(int j = 0; j < 30; j++){
                 secondHalf.add(randInt(0,100));
             }
             
-           BinaryTree wholeTree = firstHalf.union(secondHalf);
+            BinaryTree wholeTree;
+            wholeTree = firstHalf.union(secondHalf);
             /*
             for(int j = 0; j < 100; j++){
                 if((firstHalf.member(j)!= wholeTree.member(i))||
@@ -31,8 +33,8 @@ public class FiniteSet{
                 }
              }
              */
-            System.out.println(firstHalf.cardinality());
-            System.out.println(secondHalf.cardinality());
+//            System.out.println(firstHalf.cardinality());
+//            System.out.println(secondHalf.cardinality());
             if (wholeTree == null){
             System.out.println("WTF NULL");
             }
@@ -83,8 +85,9 @@ public class FiniteSet{
 //        System.out.println(new Random().nextInt(100));
 //        System.out.println(randInt(0,10));
         
-        BinaryTree thirdHalf = new Leaf();
-        System.out.println(thirdHalf.add(randInt(0,100)).cardinality());
+        BinaryTree thirdHalf = firstHalf.union(secondHalf);
+        System.out.println(thirdHalf.cardinality());
+        
         
         // Tests for union()
         unionChecker(5);
