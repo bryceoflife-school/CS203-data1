@@ -55,7 +55,7 @@ public class Branch implements BinaryTree{
     
     public BinaryTree remove(int elt){
         Branch newBST = new Branch(this.root, this.left, this.right);
-        if  (elt == root) {
+        if (elt == root) {
             return newBST.left.union(newBST.right);
         } else if (elt < newBST.root) {
             newBST.left = newBST.left.remove(elt);
@@ -70,7 +70,14 @@ public class Branch implements BinaryTree{
     }
     
     public BinaryTree inter(BinaryTree u){
-        return null;
+        Branch newBST = new Branch(this.root, this.left, this.right);
+        if (u.member(this.root)) {
+            newBST.left.inter(u);
+            newBST.right.inter(u);
+            return newBST;
+        } else {
+            return left.inter(u).union(right.inter(u));
+        }
     }
     
     public BinaryTree diff(BinaryTree u){

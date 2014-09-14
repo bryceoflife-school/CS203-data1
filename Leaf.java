@@ -39,11 +39,11 @@ public class Leaf implements BinaryTree{
     public BinaryTree union(BinaryTree u){
         return u;
     }
-    /*
-    public BinaryTree inter(BinaryTree u){
-        return null;
-    }
     
+    public BinaryTree inter(BinaryTree u){
+        return u;
+    }
+    /*
     public BinaryTree diff(BinaryTree u){
         return null;
     }
