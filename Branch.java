@@ -58,7 +58,7 @@ public class Branch implements BinaryTree{
     }
     
     public BinaryTree union(BinaryTree u){
-        return null;
+        return u.add(this.root).union(this.left).union(this.right);
     }
     
     public BinaryTree inter(BinaryTree u){
