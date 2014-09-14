@@ -54,7 +54,15 @@ public class Branch implements BinaryTree{
     
     
     public BinaryTree remove(int elt){
-        return null;
+        Branch newBST = new Branch(this.root, this.left, this.right);
+        if  (elt == root) {
+            return newBST.left.union(newBST.right);
+        } else if (elt < newBST.root) {
+            newBST.left = newBST.left.remove(elt);
+        } else {
+            newBST.right = newBST.right.remove(elt);
+        }
+        return newBST;
     }
     
     public BinaryTree union(BinaryTree u){
