@@ -115,7 +115,28 @@ public class FiniteSet{
         System.out.println(interHalfThree.member(9) + " expected " + true);
         System.out.println(interHalfThree.member(11) + " expected " + true);
         System.out.println(interHalfThree.member(8) + " expected " + false);
+
+        // Tests for diff()
+        System.out.println(" ");
+        System.out.println("Tests for diff() of manually generated trees");
+        BinaryTree diffHalfThree = interHalfOne.diff(interHalfTwo);
+        System.out.println(diffHalfThree.cardinality() + " expected " + 1);
+        System.out.println(diffHalfThree.member(9) + " expected " + false);
+        System.out.println(diffHalfThree.member(11) + " expected " + false);
+        System.out.println(diffHalfThree.member(8) + " expected " + true);
+
+        // Tests for equal()
+        System.out.println(" ");
+        System.out.println("Tests for equal() of manually generated trees");
+        System.out.println(interHalfTwo.equal(interHalfTwo) + " expected " + true);
+        System.out.println(firstHalf.equal(secondHalf) + " expected " + false);
         
+        // Tests for subset()
+        System.out.println(" ");
+        System.out.println("Tests for subset() of manually generated trees");
+        System.out.println(interHalfTwo.subset(interHalfTwo) + " expected " + true);
+        System.out.println(firstHalf.subset(secondHalf) + " expected " + false);
+        System.out.println(secondHalf.subset(interHalfTwo) + " expected " + true);
         
         
     }

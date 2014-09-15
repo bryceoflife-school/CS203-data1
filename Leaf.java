@@ -43,9 +43,9 @@ public class Leaf implements BinaryTree{
     public BinaryTree inter(BinaryTree u){
         return u;
     }
-    /*
+    
     public BinaryTree diff(BinaryTree u){
-        return null;
+        return u;
     }
     
     public boolean equal(BinaryTree u){
@@ -56,5 +56,5 @@ public class Leaf implements BinaryTree{
         return false;
      
     }
-     */
+     
 }
