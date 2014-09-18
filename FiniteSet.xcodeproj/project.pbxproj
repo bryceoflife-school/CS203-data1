@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		C8C7E24919C33D7900923032 /* BinaryTree.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = BinaryTree.java; sourceTree = "<group>"; };
-		C8C7E24A19C33D7900923032 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
 		C8C7E24B19C33DFA00923032 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		C8F7E3FE19C34B34003C0B03 /* Leaf.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Leaf.java; sourceTree = "<group>"; };
 		C8F7E3FF19C34F68003C0B03 /* Branch.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Branch.java; sourceTree = "<group>"; };
@@ -21,9 +20,8 @@
 			children = (
 				C8C7E24919C33D7900923032 /* BinaryTree.java */,
 				C8F7E3FE19C34B34003C0B03 /* Leaf.java */,
-				C8F7E40019C39355003C0B03 /* FiniteSet.java */,
 				C8F7E3FF19C34F68003C0B03 /* Branch.java */,
-				C8C7E24A19C33D7900923032 /* TemplateIcon2x.png */,
+				C8F7E40019C39355003C0B03 /* FiniteSet.java */,
 				C8C7E24B19C33DFA00923032 /* Makefile */,
 			);
 			sourceTree = "<group>";

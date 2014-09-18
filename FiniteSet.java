@@ -141,3 +141,15 @@ public class FiniteSet{
         
     }
 }
+
+
+// Testing : standard says we should do x y z, reference our own code and show that that happens.
+// Convince yourself and other people that your code does what it is supposed to do.
+
+// Property about cardninality? Properties are all about the relationship between multiple methods. for example
+// addition is associatitve, that shows you that you can permute it and it is still equal. But that is really saying
+// things about addition and equality.  ONLY thing worth talking about are their relationships.
+
+// Create a table of all the methods against eachother. How does empty() relate to remove()
+// the cardinaltiy of empty() is zero etc. What empty does against everything is the implementation of the leaf class.
+// The column for equals is the implementation of the branch class. 
