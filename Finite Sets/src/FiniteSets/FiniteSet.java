@@ -6,8 +6,10 @@ import static FiniteSets.Tests.treeTestaddAndequal;
 import static FiniteSets.Tests.treeTestaddAndmember;
 import static FiniteSets.Tests.treeTestcardinalityAndadd;
 import static FiniteSets.Tests.treeTestemptyAndisEmptyHuh;
+import static FiniteSets.Tests.treeTestinterAndequalAndunion;
 import static FiniteSets.Tests.treeTestisEmptyHuhAndCardinality;
 import static FiniteSets.Tests.treeTestremoveandisEmptyHuh;
+import static FiniteSets.Tests.treeTestunionAndSubset;
 
 public class FiniteSet implements BinaryTree {
 
@@ -132,11 +134,7 @@ public class FiniteSet implements BinaryTree {
     // u : finite-set
     //Determines if t and u contain the same elements.
     public boolean equal(BinaryTree u) {
-        if (this.subset(u) == u.subset(this)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (this.subset(u) && u.subset(this));
     }
 
     //(subset t u) → boolean
@@ -251,6 +249,34 @@ public class FiniteSet implements BinaryTree {
             treeTestaddAndequal(tree,tree2,randomElt);
         }
         
+        // Tests for union() and subset()
+        System.out.println();
+        System.out.println("Tests for add() and equal()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+            int randomInt = randInt(0, 10);
+            BinaryTree tree = randomTree(randomInt);
+            BinaryTree tree2 = randomTree(randomInt);
+            treeTestunionAndSubset(tree,tree2);
+        }
+        
+        // Tests for inter() and equal() and union()
+        System.out.println();
+        System.out.println("inter() and equal() and union()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+                 int len = randInt(0,10);
+              int len2 = randInt(0, 10);
+              BinaryTree l = randomTree(len);
+              BinaryTree r = randomTree(len2);
+               //Adding a random Number so we can get all the cases
+                int randomNumber = randInt(0,4);
+                    if (randomNumber == 3) {
+                            treeTestinterAndequalAndunion(l, l);
+                                }
+              treeTestinterAndequalAndunion(l, r);
+          } 
+
         
         /*
         

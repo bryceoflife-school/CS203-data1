@@ -78,7 +78,7 @@ public class Leaf implements BinaryTree{
     
     // The empty set is a subset of all sets
     public boolean subset(BinaryTree u){
-        return false;
+        return true;
      
     }
      
