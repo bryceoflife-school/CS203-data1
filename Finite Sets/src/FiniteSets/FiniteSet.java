@@ -10,6 +10,7 @@ import static FiniteSets.Tests.treeTestemptyAndisEmptyHuh;
 import static FiniteSets.Tests.treeTestinterAndequalAndunion;
 import static FiniteSets.Tests.treeTestisEmptyHuhAndCardinality;
 import static FiniteSets.Tests.treeTestremoveandisEmptyHuh;
+import static FiniteSets.Tests.treeTestsUnionAndequal;
 import static FiniteSets.Tests.treeTestunionAndSubset;
 import static FiniteSets.Tests.treeTestsubsetAndcardinality;
 import static FiniteSets.Tests.treeTestunionAndcardinality;
@@ -316,6 +317,19 @@ public class FiniteSet implements BinaryTree {
             BinaryTree tree2 = randomTree(randomInt2);
             
             treeTestunionAndcardinalityAndinter(tree1, tree2);
+        }
+        
+        // Tests for union() and equal()
+        System.out.println();
+        System.out.println("union() and equal()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+            int randomInt = randInt(0, 10);
+            int randomInt2 = randInt(0, 10);
+            BinaryTree tree1 = randomTree(randomInt);
+            BinaryTree tree2 = randomTree(randomInt2);
+            
+            treeTestsUnionAndequal(tree1, tree2);
         }
 
         // THIS TEST IM NOT SO SURE ABOUT BUT I CANNOT THINK ANYMORE

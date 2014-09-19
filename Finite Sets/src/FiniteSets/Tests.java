@@ -182,5 +182,13 @@ public class Tests {
              System.out.println("Fail. The cardinalities are not equal");
         }
     }
-
+    
+    // Logic: t = (t U t)
+    public static void treeTestsUnionAndequal(BinaryTree t, BinaryTree u){
+        if (t.equal(t.union(t))){
+            System.out.println("Pass. The set t is equal to the set t union set t");
+        } else {
+            System.out.println("Fail. The set t is equal to the set t union set t");
+        }
+    }
 }
