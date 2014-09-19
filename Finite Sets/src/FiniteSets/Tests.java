@@ -101,6 +101,19 @@ public class Tests {
             }
     
 }
+        // Logic: two empty trees with the same elements added to them should be equal
+        // Therefore equal() should return true
+        public static void treeTestaddAndequal(BinaryTree tree1, BinaryTree tree2, int elt){
+            
+            tree1.add(elt);
+            tree2.add(elt);
+            
+            if (tree1.equal(tree2)){
+                System.out.println("Pass. The two sets are equal");
+            } else {
+                System.out.println("Fail. The two sets are not equal");
+            }
+        }
  
     
     
