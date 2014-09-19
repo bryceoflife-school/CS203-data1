@@ -292,8 +292,8 @@ public class FiniteSet implements BinaryTree {
 
        
         
-        /*
         
+        System.out.println("Non-randomly generated tests");
         
          // Tests for cardinality()
          System.out.println(" ");
@@ -369,7 +369,7 @@ public class FiniteSet implements BinaryTree {
          System.out.println(interHalfTwo.subset(interHalfTwo) + " expected " + true);
          System.out.println(firstHalf.subset(secondHalf) + " expected " + false);
          System.out.println(secondHalf.subset(interHalfTwo) + " expected " + true);
-         */
+         
     }
 }
 
