@@ -127,7 +127,7 @@ public class Tests {
     // Logic: If two sets are equal, then the cardinality of their intersecition will be the same as
     // The cardinality of each set.
     public static void treeTestinterAndequalAndunion(BinaryTree tree1, BinaryTree tree2) {
-     if ((tree1.union(tree2).equal(tree1.inter(tree2))) && tree1.equal(tree2)) {
+        if ((tree1.union(tree2).equal(tree1.inter(tree2))) && tree1.equal(tree2)) {
             System.out.println("Pass. Sets equal with same intersection and union");
         } else if (!(tree1.union(tree2).equal(tree1.inter(tree2))) && !tree1.equal(tree2)) {
             System.out.println("Pass. Sets not equal with different intersection and union");
@@ -135,7 +135,7 @@ public class Tests {
             System.out.println("Fail. Sets equal with different intersection and union");
         }
     }
-    
+
     // Logic: the difference of two equal sets should be empty
     public static void treeTestdiffAndisEmptyHuh(BinaryTree tree1, BinaryTree tree2) {
         if ((tree1.diff(tree2).isEmptyHuh()) && tree1.equal(tree2)) {
@@ -148,11 +148,11 @@ public class Tests {
             System.out.println("Fail. Sets differnce of equal sets is not the empty set");
         }
     }
-    
+
     // Logic: The cardinality of subset of set t should be smaler than the
     // cardinality of set t
-    public static void treeTestsubsetAndcardinality(BinaryTree t, BinaryTree u){
-        if (t.subset(u)){
+    public static void treeTestsubsetAndcardinality(BinaryTree t, BinaryTree u) {
+        if (t.subset(u)) {
             if (t.cardinality() <= u.cardinality()) {
                 System.out.println("Pass. t is a subset of u and t's cardinality is smaller than or equal to u's.");
             } else {
@@ -164,7 +164,14 @@ public class Tests {
             }
         }
     }
-    
-    // 
 
+    // Logic: | t U u | <= | t | + | u |
+    public static void treeTestunionAndcardinality(BinaryTree t, BinaryTree u) {
+        if (t.union(u).cardinality() <= t.cardinality() + u.cardinality()) {
+            System.out.println("Pass. The cardinality of the unon of t and u is smaller or equal to the cardinality of t + u.");
+        } else {
+            System.out.println("Fail. The cardinality of the unon of t and u is not smaller or equal to the cardinality of t + u.");
+        }
     }
+
+}
