@@ -129,7 +129,7 @@ public class Tests {
     public static void treeTestinterAndequalAndunion(BinaryTree tree1, BinaryTree tree2) {
      if ((tree1.union(tree2).equal(tree1.inter(tree2))) && tree1.equal(tree2)) {
             System.out.println("Pass. Sets equal with same intersection and union");
-        } else if ((tree1.union(tree2) != tree1.inter(tree2)) && !tree1.equal(tree2)) {
+        } else if (!(tree1.union(tree2).equal(tree1.inter(tree2))) && !tree1.equal(tree2)) {
             System.out.println("Pass. Sets not equal with different intersection and union");
         } else {
             System.out.println("Fail. Sets equal with different intersection and union");
