@@ -106,11 +106,9 @@ public class Tests {
     // Therefore equal() should return true
 
     public static void treeTestaddAndequal(BinaryTree tree1, BinaryTree tree2, int elt) {
-
-        tree1.add(elt);
-        tree2.add(elt);
-
-        if (tree1.equal(tree2)) {
+        BinaryTree addedTree = tree1.add(elt);
+        BinaryTree addedTree2 = tree2.add(elt);
+        if (addedTree.equal(addedTree2)) {
             System.out.println("Pass. The two sets are equal");
         } else {
             System.out.println("Fail. The two sets are not equal");
