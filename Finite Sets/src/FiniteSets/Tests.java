@@ -81,6 +81,24 @@ public class Tests {
             } else {
                 System.out.println("Fail. The added member is not an element of the set");
             }
+}
+        
+        // Logic: adding and removing an element should result in the set remaining empty
+        // Therefore isEmptyHuh should return true
+        public static void treeTestremoveandisEmptyHuh(BinaryTree tree, int elt){
+            BinaryTree treeWithMember = tree.add(elt);
+            Boolean checkOne = treeWithMember.isEmptyHuh();
+            BinaryTree treeWithoutMember = tree.remove(elt);
+            Boolean checkTwo = treeWithoutMember.isEmptyHuh();
+            if (!checkOne && !checkTwo) {
+                System.out.println("Fail. The element was not removed");
+            } else if (checkOne && checkTwo) {
+                System.out.println("Fail. The element was not added");
+            } else if (!checkOne && checkTwo){
+                System.out.println("Pass. The element was added and removed resulting in an empty set");
+            } else {
+                System.out.println("Fail. The element was added but not removed ");
+            }
     
 }
  

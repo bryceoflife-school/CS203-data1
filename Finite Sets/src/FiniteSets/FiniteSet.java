@@ -6,6 +6,7 @@ import static FiniteSets.Tests.treeTestaddAndmember;
 import static FiniteSets.Tests.treeTestcardinalityAndadd;
 import static FiniteSets.Tests.treeTestemptyAndisEmptyHuh;
 import static FiniteSets.Tests.treeTestisEmptyHuhAndCardinality;
+import static FiniteSets.Tests.treeTestremoveandisEmptyHuh;
 
 public class FiniteSet implements BinaryTree {
 
@@ -85,11 +86,11 @@ public class FiniteSet implements BinaryTree {
         if (elt == this.root) {
             return this.left.union(this.right);
         } else if (elt < this.root) {
-            this.left = this.left.remove(elt);
+            return new FiniteSet(this.root, this.left.remove(elt), 
+                    this.right.remove(elt));
         } else {
-            this.right = this.right.remove(elt);
+            return new FiniteSet(this.root, this.left.remove(elt), this.right);
         }
-        return this;
     }
 
     // (union t u) → finite-set
@@ -227,6 +228,18 @@ public class FiniteSet implements BinaryTree {
             BinaryTree tree = empty();
             treeTestaddAndmember(tree,randomElt);
         }
+        
+         // Tests for remove() and isEmptyHuh()
+        System.out.println();
+        System.out.println("Tests for remove() and isEmptyHuh()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+            int randomElt = randInt(0, 100);
+            BinaryTree tree = empty();
+            treeTestremoveandisEmptyHuh(tree,randomElt);
+        }
+        
+        
         /*
         
         
