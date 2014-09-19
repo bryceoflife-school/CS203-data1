@@ -5,6 +5,7 @@ import static FiniteSets.Tests.randomTree;
 import static FiniteSets.Tests.treeTestaddAndequal;
 import static FiniteSets.Tests.treeTestaddAndmember;
 import static FiniteSets.Tests.treeTestcardinalityAndadd;
+import static FiniteSets.Tests.treeTestdiffAndisEmptyHuh;
 import static FiniteSets.Tests.treeTestemptyAndisEmptyHuh;
 import static FiniteSets.Tests.treeTestinterAndequalAndunion;
 import static FiniteSets.Tests.treeTestisEmptyHuhAndCardinality;
@@ -265,18 +266,31 @@ public class FiniteSet implements BinaryTree {
         System.out.println("inter() and equal() and union()");
         System.out.println();
         for (int i = 0; i < 50; i++) {
-                 int len = randInt(0,10);
-              int len2 = randInt(0, 10);
-              BinaryTree l = randomTree(len);
-              BinaryTree r = randomTree(len2);
-               //Adding a random Number so we can get all the cases
+                 int randomInt = randInt(0,10);
+              int randomInt2 = randInt(0, 10);
+              BinaryTree tree1 = randomTree(randomInt);
+              BinaryTree tree2 = randomTree(randomInt2);
                 int randomNumber = randInt(0,4);
-                    if (randomNumber == 3) {
-                            treeTestinterAndequalAndunion(l, l);
+                    if (randomNumber == 1) {
+                            treeTestinterAndequalAndunion(tree1, tree1);
                                 }
-              treeTestinterAndequalAndunion(l, r);
+              treeTestinterAndequalAndunion(tree1, tree2);
+          } 
+        
+        // THIS TEST IM NOT SO SURE ABOUT BUT I CANNOT THINK ANYMORE
+        // Tests for diff() and isEmptyHuh()
+        System.out.println();
+        System.out.println("diff() and isEmptyHuh()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+                 int randomInt = randInt(0,10);
+              int randomInt2 = randInt(0, 10);
+              BinaryTree tree1 = randomTree(randomInt);
+              BinaryTree tree2 = randomTree(randomInt2);
+              treeTestdiffAndisEmptyHuh(tree1, tree2);
           } 
 
+       
         
         /*
         

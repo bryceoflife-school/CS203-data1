@@ -136,5 +136,18 @@ public class Tests {
         }
     }
     
+    // Logic: the difference of two equal sets should be empty
+    public static void treeTestdiffAndisEmptyHuh(BinaryTree tree1, BinaryTree tree2) {
+        if ((tree1.diff(tree2).isEmptyHuh()) && tree1.equal(tree2)) {
+            System.out.println("Pass. Set difference of equal sets is the empty set");
+        } else if (!(tree1.diff(tree2).isEmptyHuh()) && !tree1.equal(tree2)) {
+            System.out.println("Pass. Set difference of non-equal sets is not the empty set");
+        } else {
+//            System.out.println(tree1.cardinality());
+//            System.out.println(tree2.cardinality());
+            System.out.println("Fail. Sets differnce of equal sets is not the empty set");
+        }
+    }
+    
 
     }
