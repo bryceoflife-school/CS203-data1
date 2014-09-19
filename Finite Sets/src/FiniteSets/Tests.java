@@ -149,5 +149,22 @@ public class Tests {
         }
     }
     
+    // Logic: The cardinality of subset of set t should be smaler than the
+    // cardinality of set t
+    public static void treeTestsubsetAndcardinality(BinaryTree t, BinaryTree u){
+        if (t.subset(u)){
+            if (t.cardinality() <= u.cardinality()) {
+                System.out.println("Pass. t is a subset of u and t's cardinality is smaller than or equal to u's.");
+            } else {
+                System.out.println("Fail. t is a subset of u but t's cardinality is not smaller than or equal to u's");
+            }
+        } else {
+            if (t.cardinality() >= u.cardinality()) {
+                System.out.println("Pass. t is not a subset of u and t's cardinality is not smaller than or equal to u's.");
+            }
+        }
+    }
+    
+    // 
 
     }

@@ -11,6 +11,7 @@ import static FiniteSets.Tests.treeTestinterAndequalAndunion;
 import static FiniteSets.Tests.treeTestisEmptyHuhAndCardinality;
 import static FiniteSets.Tests.treeTestremoveandisEmptyHuh;
 import static FiniteSets.Tests.treeTestunionAndSubset;
+import static FiniteSets.Tests.treeTestsubsetAndcardinality;
 
 public class FiniteSet implements BinaryTree {
 
@@ -90,7 +91,7 @@ public class FiniteSet implements BinaryTree {
         if (elt == this.root) {
             return this.left.union(this.right);
         } else if (elt < this.root) {
-            return new FiniteSet(this.root, this.left.remove(elt), 
+            return new FiniteSet(this.root, this.left.remove(elt),
                     this.right.remove(elt));
         } else {
             return new FiniteSet(this.root, this.left.remove(elt), this.right);
@@ -216,9 +217,9 @@ public class FiniteSet implements BinaryTree {
             int randomInt = randInt(0, 10);
             int randomElt = randInt(0, 100);
             BinaryTree tree = randomTree(randomInt);
-            treeTestcardinalityAndadd(tree,randomInt,randomElt);
+            treeTestcardinalityAndadd(tree, randomInt, randomElt);
         }
-        
+
         // Tests for add() and member()
         System.out.println();
         System.out.println("Tests for add() and member()");
@@ -226,19 +227,19 @@ public class FiniteSet implements BinaryTree {
         for (int i = 0; i < 50; i++) {
             int randomElt = randInt(0, 100);
             BinaryTree tree = empty();
-            treeTestaddAndmember(tree,randomElt);
+            treeTestaddAndmember(tree, randomElt);
         }
-        
-         // Tests for remove() and isEmptyHuh()
+
+        // Tests for remove() and isEmptyHuh()
         System.out.println();
         System.out.println("Tests for remove() and isEmptyHuh()");
         System.out.println();
         for (int i = 0; i < 50; i++) {
             int randomElt = randInt(0, 100);
             BinaryTree tree = empty();
-            treeTestremoveandisEmptyHuh(tree,randomElt);
+            treeTestremoveandisEmptyHuh(tree, randomElt);
         }
-        
+
         // Tests for add() and equal()
         System.out.println();
         System.out.println("Tests for add() and equal()");
@@ -247,9 +248,9 @@ public class FiniteSet implements BinaryTree {
             int randomElt = randInt(0, 100);
             BinaryTree tree = empty();
             BinaryTree tree2 = empty();
-            treeTestaddAndequal(tree,tree2,randomElt);
+            treeTestaddAndequal(tree, tree2, randomElt);
         }
-        
+
         // Tests for union() and subset()
         System.out.println();
         System.out.println("Tests for add() and equal()");
@@ -258,118 +259,128 @@ public class FiniteSet implements BinaryTree {
             int randomInt = randInt(0, 10);
             BinaryTree tree = randomTree(randomInt);
             BinaryTree tree2 = randomTree(randomInt);
-            treeTestunionAndSubset(tree,tree2);
+            treeTestunionAndSubset(tree, tree2);
         }
-        
+
         // Tests for inter() and equal() and union()
         System.out.println();
         System.out.println("inter() and equal() and union()");
         System.out.println();
         for (int i = 0; i < 50; i++) {
-                 int randomInt = randInt(0,10);
-              int randomInt2 = randInt(0, 10);
-              BinaryTree tree1 = randomTree(randomInt);
-              BinaryTree tree2 = randomTree(randomInt2);
-                int randomNumber = randInt(0,4);
-                    if (randomNumber == 1) {
-                            treeTestinterAndequalAndunion(tree1, tree1);
-                                }
-              treeTestinterAndequalAndunion(tree1, tree2);
-          } 
-        
+            int randomInt = randInt(0, 10);
+            int randomInt2 = randInt(0, 10);
+            BinaryTree tree1 = randomTree(randomInt);
+            BinaryTree tree2 = randomTree(randomInt2);
+            int randomNumber = randInt(0, 4);
+            if (randomNumber == 1) {
+                treeTestinterAndequalAndunion(tree1, tree1);
+            }
+            treeTestinterAndequalAndunion(tree1, tree2);
+        }
+
+        // Tests for subset() and cardinality()
+        System.out.println();
+        System.out.println("subset() and cardinality()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+            int randomInt = randInt(0, 10);
+            int randomInt2 = randInt(0, 10);
+            BinaryTree tree1 = randomTree(randomInt);
+            BinaryTree tree2 = randomTree(randomInt2);
+            
+            treeTestsubsetAndcardinality(tree1, tree2);
+        }
+
+
         // THIS TEST IM NOT SO SURE ABOUT BUT I CANNOT THINK ANYMORE
         // Tests for diff() and isEmptyHuh()
         System.out.println();
         System.out.println("diff() and isEmptyHuh()");
         System.out.println();
         for (int i = 0; i < 50; i++) {
-                 int randomInt = randInt(0,10);
-              int randomInt2 = randInt(0, 10);
-              BinaryTree tree1 = randomTree(randomInt);
-              BinaryTree tree2 = randomTree(randomInt2);
-              treeTestdiffAndisEmptyHuh(tree1, tree2);
-          } 
+            int randomInt = randInt(0, 10);
+            int randomInt2 = randInt(0, 10);
+            BinaryTree tree1 = randomTree(randomInt);
+            BinaryTree tree2 = randomTree(randomInt2);
+            treeTestdiffAndisEmptyHuh(tree1, tree2);
+        }
 
-       
-        
-        
         System.out.println("Non-randomly generated tests");
-        
-         // Tests for cardinality()
-         System.out.println(" ");
-         System.out.println("Tests for cardinality()");
-         System.out.println("Cardinality of t1 is: " + t1.cardinality() + " expected " + 5);
-         System.out.println("Cardinality of t2 is: " + t2.cardinality() + " expected " + 6);
-         
-         // Tests for isEmptyHuh()
-         System.out.println(" ");
-         System.out.println("Tests for isEmptyHuh()");
-         System.out.println(t1.isEmptyHuh() + " expected " + false);
-         System.out.println(empty.isEmptyHuh() + " expected " + true);
-         
-         // Tests for member()
-         System.out.println(" ");
-         System.out.println("Tests for member()");
-         System.out.println(t1.member(9) + " expected " + true);
-         System.out.println(t2.member(9) + " expected " + true);
-         System.out.println(empty.member(9) + " expected " + false);
-         
-         
-         // Tests for add()
-         System.out.println(" ");
-         System.out.println("Tests for add()");
-         System.out.println(t1.member(6) + " expected " + false);
-         System.out.println("Cardinality of t1 is: " + t1.add(6).cardinality() + " expected " + 6);
-         System.out.println(t1.add(6).member(6) + " expected " + true);
-         
-         // Tests for remove()
-         System.out.println(" ");
-         System.out.println("Tests for remove()");
-         System.out.println(t1.member(11) + " expected " + true);
-         System.out.println("Cardinality of t1 is: " + t1.remove(11).cardinality() + " expected " + 4);
-         System.out.println(t1.remove(11).member(11) + " expected " + false);
-         
-         // Tests for union()
-         System.out.println(" ");
-         System.out.println("Tests for union() of manually generated trees");
-         BinaryTree thirdHalf = firstHalf.union(secondHalf);
-         System.out.println(thirdHalf.cardinality() + " expected " + 5);
-         
-         System.out.println(" ");
-         System.out.println("Tests for union() of randomly generated trees");
+
+        // Tests for cardinality()
+        System.out.println(" ");
+        System.out.println("Tests for cardinality()");
+        System.out.println("Cardinality of t1 is: " + t1.cardinality() + " expected " + 5);
+        System.out.println("Cardinality of t2 is: " + t2.cardinality() + " expected " + 6);
+
+        // Tests for isEmptyHuh()
+        System.out.println(" ");
+        System.out.println("Tests for isEmptyHuh()");
+        System.out.println(t1.isEmptyHuh() + " expected " + false);
+        System.out.println(empty.isEmptyHuh() + " expected " + true);
+
+        // Tests for member()
+        System.out.println(" ");
+        System.out.println("Tests for member()");
+        System.out.println(t1.member(9) + " expected " + true);
+        System.out.println(t2.member(9) + " expected " + true);
+        System.out.println(empty.member(9) + " expected " + false);
+
+        // Tests for add()
+        System.out.println(" ");
+        System.out.println("Tests for add()");
+        System.out.println(t1.member(6) + " expected " + false);
+        System.out.println("Cardinality of t1 is: " + t1.add(6).cardinality() + " expected " + 6);
+        System.out.println(t1.add(6).member(6) + " expected " + true);
+
+        // Tests for remove()
+        System.out.println(" ");
+        System.out.println("Tests for remove()");
+        System.out.println(t1.member(11) + " expected " + true);
+        System.out.println("Cardinality of t1 is: " + t1.remove(11).cardinality() + " expected " + 4);
+        System.out.println(t1.remove(11).member(11) + " expected " + false);
+
+        // Tests for union()
+        System.out.println(" ");
+        System.out.println("Tests for union() of manually generated trees");
+        BinaryTree thirdHalf = firstHalf.union(secondHalf);
+        System.out.println(thirdHalf.cardinality() + " expected " + 5);
+
+        System.out.println(" ");
+        System.out.println("Tests for union() of randomly generated trees");
          //         unionChecker(5);
-        
-         // Tests for inter()
-         System.out.println(" ");
-         System.out.println("Tests for inter() of manually generated trees");
-         BinaryTree interHalfThree = interHalfOne.inter(interHalfTwo);
-         System.out.println(interHalfThree.cardinality() + " expected " + 2);
-         System.out.println(interHalfThree.member(9) + " expected " + true);
-         System.out.println(interHalfThree.member(11) + " expected " + true);
-         System.out.println(interHalfThree.member(8) + " expected " + false);
-         
-         // Tests for diff()
-         System.out.println(" ");
-         System.out.println("Tests for diff() of manually generated trees");
-         BinaryTree diffHalfThree = interHalfOne.diff(interHalfTwo);
-         System.out.println(diffHalfThree.cardinality() + " expected " + 1);
-         System.out.println(diffHalfThree.member(9) + " expected " + false);
-         System.out.println(diffHalfThree.member(11) + " expected " + false);
-         System.out.println(diffHalfThree.member(8) + " expected " + true);
-         
-         // Tests for equal()
-         System.out.println(" ");
-         System.out.println("Tests for equal() of manually generated trees");
-         System.out.println(interHalfTwo.equal(interHalfTwo) + " expected " + true);
-         System.out.println(firstHalf.equal(secondHalf) + " expected " + false);
-         
-         // Tests for subset()
-         System.out.println(" ");
-         System.out.println("Tests for subset() of manually generated trees");
-         System.out.println(interHalfTwo.subset(interHalfTwo) + " expected " + true);
-         System.out.println(firstHalf.subset(secondHalf) + " expected " + false);
-         System.out.println(secondHalf.subset(interHalfTwo) + " expected " + true);
-         
+
+        // Tests for inter()
+        System.out.println(" ");
+        System.out.println("Tests for inter() of manually generated trees");
+        BinaryTree interHalfThree = interHalfOne.inter(interHalfTwo);
+        System.out.println(interHalfThree.cardinality() + " expected " + 2);
+        System.out.println(interHalfThree.member(9) + " expected " + true);
+        System.out.println(interHalfThree.member(11) + " expected " + true);
+        System.out.println(interHalfThree.member(8) + " expected " + false);
+
+        // Tests for diff()
+        System.out.println(" ");
+        System.out.println("Tests for diff() of manually generated trees");
+        BinaryTree diffHalfThree = interHalfOne.diff(interHalfTwo);
+        System.out.println(diffHalfThree.cardinality() + " expected " + 1);
+        System.out.println(diffHalfThree.member(9) + " expected " + false);
+        System.out.println(diffHalfThree.member(11) + " expected " + false);
+        System.out.println(diffHalfThree.member(8) + " expected " + true);
+
+        // Tests for equal()
+        System.out.println(" ");
+        System.out.println("Tests for equal() of manually generated trees");
+        System.out.println(interHalfTwo.equal(interHalfTwo) + " expected " + true);
+        System.out.println(firstHalf.equal(secondHalf) + " expected " + false);
+
+        // Tests for subset()
+        System.out.println(" ");
+        System.out.println("Tests for subset() of manually generated trees");
+        System.out.println(interHalfTwo.subset(interHalfTwo) + " expected " + true);
+        System.out.println(firstHalf.subset(secondHalf) + " expected " + false);
+        System.out.println(secondHalf.subset(interHalfTwo) + " expected " + true);
+
     }
 }
 
