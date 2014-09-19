@@ -1,7 +1,6 @@
-//package CS203data1;
+package FiniteSets;
 
-interface BinaryTree {
-    public BinaryTree empty();
+public interface BinaryTree {
     public int cardinality();
     public boolean isEmptyHuh();
     public boolean member(int elt);
