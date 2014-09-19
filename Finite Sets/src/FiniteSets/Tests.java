@@ -73,8 +73,14 @@ public class Tests {
         
         // Logic: adding an element to the results in that element being a member of the set.
         // Therefore member should return true.
-        public static void treeTestaddAndmember(BinaryTree tree, int count, int elt){
-            
+        public static void treeTestaddAndmember(BinaryTree tree, int elt){
+            BinaryTree treeWithMember = tree.add(elt);
+           
+            if (treeWithMember.member(elt)){
+                System.out.println("Pass. The added element is a member of the set");
+            } else {
+                System.out.println("Fail. The added member is not an element of the set");
+            }
     
 }
  

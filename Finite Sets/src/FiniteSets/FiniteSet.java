@@ -2,6 +2,7 @@ package FiniteSets;
 
 import static FiniteSets.Tests.randInt;
 import static FiniteSets.Tests.randomTree;
+import static FiniteSets.Tests.treeTestaddAndmember;
 import static FiniteSets.Tests.treeTestcardinalityAndadd;
 import static FiniteSets.Tests.treeTestemptyAndisEmptyHuh;
 import static FiniteSets.Tests.treeTestisEmptyHuhAndCardinality;
@@ -215,6 +216,16 @@ public class FiniteSet implements BinaryTree {
             int randomElt = randInt(0, 100);
             BinaryTree tree = randomTree(randomInt);
             treeTestcardinalityAndadd(tree,randomInt,randomElt);
+        }
+        
+        // Tests for add() and member()
+        System.out.println();
+        System.out.println("Tests for add() and member()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+            int randomElt = randInt(0, 100);
+            BinaryTree tree = empty();
+            treeTestaddAndmember(tree,randomElt);
         }
         /*
         
