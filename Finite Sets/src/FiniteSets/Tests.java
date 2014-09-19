@@ -173,5 +173,14 @@ public class Tests {
             System.out.println("Fail. The cardinality of the unon of t and u is not smaller or equal to the cardinality of t + u.");
         }
     }
+    
+    // Logic: | t U u | = | t | + | u | - | t /inter u|
+    public static void treeTestunionAndcardinalityAndinter( BinaryTree t, BinaryTree u){
+        if (t.union(u).cardinality() == (t.cardinality() + u.cardinality()) - t.inter(u).cardinality()){
+            System.out.println("Pass. The cardinalities are equal");
+        } else {
+             System.out.println("Fail. The cardinalities are not equal");
+        }
+    }
 
 }

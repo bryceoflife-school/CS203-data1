@@ -13,6 +13,7 @@ import static FiniteSets.Tests.treeTestremoveandisEmptyHuh;
 import static FiniteSets.Tests.treeTestunionAndSubset;
 import static FiniteSets.Tests.treeTestsubsetAndcardinality;
 import static FiniteSets.Tests.treeTestunionAndcardinality;
+import static FiniteSets.Tests.treeTestunionAndcardinalityAndinter;
 
 public class FiniteSet implements BinaryTree {
 
@@ -74,13 +75,14 @@ public class FiniteSet implements BinaryTree {
     // elt : integer
     // Returns a set containing elt and everything in t
     public BinaryTree add(int elt) {
-        FiniteSet newBST = new FiniteSet(this.root, this.left, this.right);
-        if (elt < newBST.root) {
-            newBST.left = newBST.left.add(elt);
-        } else if (elt > newBST.root) {
-            newBST.right = newBST.right.add(elt);
+        if (root == elt){
+           return this;
         }
-        return newBST;
+        else if (elt < this.root) {
+            return new FiniteSet(this.root, this.left.add(elt), this.right);
+        } else {
+            return new FiniteSet(this.root, this.left, this.right.add(elt));
+        }
     }
 
     // (remove t elt) → finite-set
@@ -115,11 +117,9 @@ public class FiniteSet implements BinaryTree {
         FiniteSet newBST = new FiniteSet(this.root, this.left, this.right);
 
         if (u.member(this.root)) {
-            newBST.left.inter(u);
-            newBST.right.inter(u);
-            return newBST;
+            return new FiniteSet(this.root, this.left.inter(u), this.right.inter(u));
         } else {
-            return left.inter(u).union(right.inter(u));
+            return this.left.inter(u).union(this.right.inter(u));
         }
     }
 
@@ -303,6 +303,19 @@ public class FiniteSet implements BinaryTree {
             BinaryTree tree2 = randomTree(randomInt2);
             
             treeTestunionAndcardinality(tree1, tree2);
+        }
+        
+        // Tests for union() and cardinality() and inter()
+        System.out.println();
+        System.out.println("union() and cardinality() and inter()");
+        System.out.println();
+        for (int i = 0; i < 50; i++) {
+            int randomInt = randInt(0, 10);
+            int randomInt2 = randInt(0, 10);
+            BinaryTree tree1 = randomTree(randomInt);
+            BinaryTree tree2 = randomTree(randomInt2);
+            
+            treeTestunionAndcardinalityAndinter(tree1, tree2);
         }
 
         // THIS TEST IM NOT SO SURE ABOUT BUT I CANNOT THINK ANYMORE
